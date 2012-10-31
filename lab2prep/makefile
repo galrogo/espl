@@ -1,9 +1,9 @@
 %.o: %.c
 	gcc -c -o $@ $<
 
-all: prep02
+all: fortune
 
-prep02: prep02.o
+fortune: fortune.o
 	gcc -g -Wall -ansi -o $@ $^ 
 
 .PHONY: clean

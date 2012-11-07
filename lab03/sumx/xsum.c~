@@ -10,7 +10,7 @@ unsigned int word, cksum=0;
 while ((opt = getopt(argc, argv, "hx")) != -1) {
                switch (opt) {
                case 'h':
-                   printf("-h print a summary of options and exit\n -x print the checksum as a hexadecimal rather than a decimal number\n");
+                   printf("usage: xsum [-x] [-h] FILE\n");
 		   exit(EXIT_SUCCESS);
                    break;
                case 'x':

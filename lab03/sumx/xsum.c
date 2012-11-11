@@ -25,8 +25,9 @@ if (optind >= argc) {
            }
            
 FILE* fp=fopen(argv[optind], "r");
-while(fread(&word, sizeof(word),1, fp)) {
+while(fread(&word, 1, sizeof(word), fp)) {
   cksum=cksum^word;
+  word = 0;
 }
 
 if (hex)
@@ -34,4 +35,7 @@ if (hex)
 else
   printf ("%d\n", cksum);
 
+fclose(fp);
+
+return 0;
 }

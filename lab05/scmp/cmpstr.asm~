@@ -1,0 +1,55 @@
+section .text
+  global cmpstr
+cmpstr:
+	;enter
+	push	ebp
+	mov	ebp, esp
+	;initalize parameters
+	mov ebx, DWORD [ebp+8]
+	movzx ebx, BYTE [ebx]
+	mov ecx, DWORD [ebp+12]
+	movzx ecx, BYTE [ecx]
+    
+
+LOOP:	
+	cmp ebx, ecx
+	je EQ
+	jg GR
+	jl LS 
+	
+	
+EQ:
+	add	DWORD [ebp+8], 1
+	add	DWORD [ebp+12], 1
+	mov 	ebx, DWORD [ebp+8]
+	movzx	ebx, BYTE [eax]
+	test	 bl, bl
+	je LASTITER
+	mov	ecx, DWORD [ebp+12]
+	movzx	ecx, BYTE [eax]
+	test	cl, cl
+	je LASTITER
+	jmp LOOP
+
+GR:
+	mov eax, 1
+	jmp END
+
+LS:
+	mov eax, 2
+	jmp END
+
+LASTITER:
+	cmp ebx, ecx
+	je ENDEQ
+	jg GR
+	jl LS
+
+ENDEQ:
+      mov eax, 0
+      jmp END
+
+END:
+     mov esp, ebp
+     pop ebp
+     ret

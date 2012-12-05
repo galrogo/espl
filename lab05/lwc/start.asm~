@@ -9,8 +9,7 @@ global strlen
 
 extern main
 _start:
-	mov  ecx, esp
-	add ecx, 4
+	lea ecx, [esp+4]
 	push ecx
 	push DWORD[esp+4]
 	call	main
@@ -39,7 +38,10 @@ open:
     mov ecx, [esp+8]
     mov edx, [esp+12]
     int 0x80
-    ret
+    cmp eax, 0
+    jg RE
+    mov eax ,-1
+RE: ret
 close:
     mov eax, 5
     mov ebx, [esp+4]

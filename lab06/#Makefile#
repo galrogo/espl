@@ -1,0 +1,20 @@
+%.o: %.c
+	gcc -nostdlib -fno-stack-protector -m32 -g -c -o $@ $<
+
+%.o: %.asm
+	nasm -g -O1 -f elf -o $@ $<
+
+all: clean  bsplit 	
+ assembimp.o
+	ld  -melf_i386 -o $@ $^
+
+bsplit.o: bsplit.c xsum.h
+xsum.o: xsum.c xsum.h
+assembimp.o: assembimp.asm
+	gcc -m32 -Wall -o $@ $^
+
+clean:
+	rm -f *.o 
+
+distclean: clean
+	rm -f bsplit bmerge

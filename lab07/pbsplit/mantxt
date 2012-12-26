@@ -1,0 +1,24 @@
+NAME
+       pbsplit - split a binary file into several chunks
+ 
+SYNOPSIS
+       pbsplit [OPTIONS] FILE
+ 
+DESCRIPTION
+       Splits  FILE into several chunks of at most the specified size FILE.01,
+       FILE.02, FILE.03 etc. Prepends each chunk with the four-byte  XOR-based
+       checksum for integrity control. Generates chunks in several parallel processes
+       exploiting multiple CPUs to increase performance.
+ 
+ 
+OPTIONS
+       -b SIZE     put at most SIZE bytes per output file
+ 
+       -h          print summary of options and exit
+ 
+       -x          print the checksum of FILE on the standard output
+ 
+       -p NPROC    maximum number of child processes.
+ 
+SEE ALSO
+       bmerge(1) 

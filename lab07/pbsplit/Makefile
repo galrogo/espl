@@ -1,0 +1,20 @@
+%.o: %.c
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+%.man: %.1
+	nroff -man $< > $@
+
+all: pbsplit 
+
+pbsplit: pbsplit.o xsum.o
+	$(CC) $(LDFLAGS) -o $@ $^
+
+pbsplit.o: pbsplit.c xsum.h
+
+xsum.o: xsum.c xsum.h
+
+clean:
+	rm -f *.o 
+
+distclean: clean
+	rm -f bsplit bmerge

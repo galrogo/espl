@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <script src="index.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>espl lab</title>
+  </head>
+  <body>
+      <div id="forms">
+	<form action=post id="login_form">
+	  username: <input type="text" name="Username:" id="user_name">
+	  password: <input type="password" name="Password:" id="password">
+	  <input type="submit" value="Submit">
+	</form>
+     </div>
+      <div id="main">
+	<div id="paragraph">
+	  <a href="http://www.google.com">My First Website</a>
+	  <p> I am ubiquitous and omnipotent! Just like Chuck Norris! </p>
+	</div>
+      <div id="main_image">
+	<img src="chuck-norris.png" alt="beware of chuck">
+      </div>
+      <br style="clear:both;"/>
+     </div>
+     <div id=britney onmouseover="document.getElementById('brit').style.visibility= 'hidden';" onmouseout="document.getElementById('brit').style.visibility= 'visible'">
+      <br>
+      <h2>Go over Britney to make her top disappear</h2>
+      <img id="brit" src="britney boobs.jpg" alt="britney">
+    </div>
+  </body>
+</html>

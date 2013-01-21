@@ -1,0 +1,31 @@
+body
+{
+  background-color:#aaaaaa;
+}
+h2
+{
+  color:red;
+}
+div
+{
+  box-shadow:0 1px 1px #FFFFFF;
+}
+form
+{
+  align: right
+}
+#main_image
+{
+  width:50%;
+  float:right;
+  box-shadow:0 0px 0px #FFFFFF;
+}
+#paragraph
+{
+  width:50%;
+  float:left;
+}
+#britney
+{
+  text-align:center; 
+}

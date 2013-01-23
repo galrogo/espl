@@ -1,16 +1,17 @@
 <html>
   <head>
-    <script src="index.js" type="text/javascript"></script>
+    <script src="index.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>espl lab</title>
   </head>
   <body>
       <div id="forms">
-	<form action=post id="login_form">
-	  username: <input type="text" name="Username:" id="user_name">
-	  password: <input type="password" name="Password:" id="password">
+	<form name="myForm" method="get" id="login_form">
+	  username: <input type="text" name="Username" id="user_name" onkeyup="showHint(this.value)" />
+	  password: <input type="password" name="Password:" id="password" />
 	  <input type="submit" value="Submit">
 	</form>
+     <p>Suggestions: <span id="txtHint"></span></p> 
      </div>
       <div id="main">
 	<div id="paragraph">
